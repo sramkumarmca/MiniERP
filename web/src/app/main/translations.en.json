@@ -1,0 +1,27 @@
+{
+    "main":  {
+        "breadcrumb": "Home",
+        "search": "Search ...",
+        "welcome": "Welcome",
+        "login": "Login",
+        "logout": "Logout"
+    },
+    "sidebar": {
+        "shortcuts": {
+            "statistics": "Statistics",
+            "edit": "Edit",
+            "profile": "Profile",
+            "administration": "Administration"
+        },
+        "items": {
+            "main.about": "About",
+            "main.dashboard": "Dashboard",
+            "main.invoices": "Invoices",
+            "main.offers": "Offers",
+            "main.contacts": "Contacts",
+            "main.suppliers": "Suppliers",
+            "main.customers": "Customers",
+            "main.getting-started": "Getting Started"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "generator-gnap": {
+    "app-name": "spitfire",
+    "app-title": "Spitfire",
+    "theme-name": "gnap-theme-gnap-angular",
+    "port-number": 9000
+  }
+}

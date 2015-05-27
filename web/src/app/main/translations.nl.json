@@ -1,0 +1,27 @@
+{
+    "main":  {
+        "breadcrumb": "Home",
+        "search": "Zoeken ...",
+        "welcome": "Welkom",
+        "login": "Aanmelden",
+        "logout": "Afmelden"
+    },
+    "sidebar": {
+        "shortcuts": {
+            "statistics": "Statistieken",
+            "edit": "Bewerken",
+            "profile": "Profiel",
+            "administration": "Administratie"
+        },
+        "items": {
+            "main.about": "Over",
+            "main.dashboard": "Dashboard",
+            "main.invoices": "Facturen",
+            "main.offers": "Offertes",
+            "main.contacts": "Contacten",
+            "main.suppliers": "Leveranciers",
+            "main.customers": "Klanten",
+            "main.getting-started": "Aan de slag"
+        }
+    }
+}
