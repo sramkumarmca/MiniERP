@@ -164,6 +164,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addresses\AddressController.cs" />
+    <Compile Include="Addresses\Create\CreateAddressHandler.cs" />
+    <Compile Include="Addresses\Create\CreateAddressRequest.cs" />
+    <Compile Include="Addresses\Create\CreateAddressResponse.cs" />
     <Compile Include="Bootstrap\Auth.cs" />
     <Compile Include="Bootstrap\StructureMap\DefaultContainer.cs" />
     <Compile Include="Bootstrap\StructureMap\Infrastructure\ServiceActivator.cs" />
