@@ -5,14 +5,17 @@
         .module('spitfire')
         .controller('MainCustomersDialogInstanceController', MainCustomersDialogInstanceController);
 
-    MainCustomersDialogInstanceController.$inject = ['$modalInstance', 'User'];
+    MainCustomersDialogInstanceController.$inject = ['$modalInstance', '$q', 'User'];
 
-    function MainCustomersDialogInstanceController($modalInstance, User) {
+    function MainCustomersDialogInstanceController($modalInstance, $q, User) {
         var vm = this;
+        vm.save = save;
+        vm.cancel = cancel;
+        vm.validateUsername = validateUsername;
 
         vm.customer = new User();
 
-        vm.save = function () {
+        function save() {
             vm.showError = false;
 
             if (vm.customerForm.$valid) {
@@ -26,10 +29,32 @@
                         vm.errorMessage = error.data.title;
                     });
             }
-        };
+        }
 
-        vm.cancel = function () {
+        function cancel() {
             $modalInstance.dismiss('cancel');
-        };
+        }
+
+        function validateUsername() {
+            if (angular.isUndefined(vm.customer.name)) {
+                return {
+                    unique: true
+                };
+            }
+
+            var uniqueDeferred = $q.defer();
+            User.get({
+                userName: vm.customer.name
+            }).$promise.then(function (user) {
+                uniqueDeferred.resolve(false);
+            }, function (errResponse) {
+                // handle 404 here
+                uniqueDeferred.resolve(true);
+            });
+
+            return {
+                unique: uniqueDeferred.promise
+            };
+        }
     }
 })();

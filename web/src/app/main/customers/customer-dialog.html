@@ -10,17 +10,19 @@
             <div class="col-xs-12">
                 <div gnap-show-validity for="username" class="form-group">
                     <label class="control-label" for="username">{{ 'main.customers.customerDialog.username' | translate }}</label>
-                    <input data-ng-model="dialogVm.customer.name" type="text" class="form-control" id="username" name="username" required/>
+                    <input data-ng-model="dialogVm.customer.name" type="text" class="form-control" id="username" name="username" required gnap-validate="dialogVm.validateUsername()" />
                     <div gnap-validation-messages for="username">
                         <div gnap-validation-message when="required">{{ 'main.customers.customerDialog.usernameRequired' | translate }}</div>
+                        <div gnap-validation-message when="unique">{{ 'main.customers.customerDialog.usernameNotUnique' | translate }}</div>
                     </div>
                 </div>
 
                 <div gnap-show-validity for="age" class="form-group">
                     <label class="control-label" for="age">{{ 'main.customers.customerDialog.age' | translate }}</label>
-                    <input data-ng-model="dialogVm.customer.age" type="text" class="form-control" id="age" name="age" required/>
+                    <input data-ng-model="dialogVm.customer.age" type="text" class="form-control" id="age" name="age" required ng-pattern="/^\d+$/"/>
                     <div gnap-validation-messages for="age">
                         <div gnap-validation-message when="required">{{ 'main.customers.customerDialog.ageRequired' | translate }}</div>
+                        <div gnap-validation-message when="pattern">{{ 'main.customers.customerDialog.ageNumeric' | translate }}</div>
                     </div>
                 </div>
             </div>
