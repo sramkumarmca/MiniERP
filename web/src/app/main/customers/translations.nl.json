@@ -1,6 +1,18 @@
 {
     "main.customers":  {
         "title": "Klanten",
-        "breadcrumb": "Klanten"
+        "breadcrumb": "Klanten",
+        "newCustomer": "Nieuwe klant",
+        "customerCreatedTitle": "Klant aangemaakt",
+        "customerCreatedText": "De klant werd aangemaakt",
+        "customerDialog": {
+            "title": "Klant gegevens",
+            "username": "Gebruikersnaam",
+            "age": "Leeftijd",
+            "usernameRequired": "Gebruikersnaam is verplicht.",
+            "ageRequired": "Leeftijd is verplicht.",
+            "cancel": "Annuleren",
+            "save": "Opslaan"
+        }
     }
 }

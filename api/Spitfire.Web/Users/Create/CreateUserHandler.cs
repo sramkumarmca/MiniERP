@@ -20,7 +20,7 @@
             {
                 var context = scope.Get<SpitfireDbContext>();
 
-                var user = context.Users.Add(new User(request.Name));
+                var user = context.Users.Add(new User(request.Name, request.Age));
 
                 scope.SaveChanges();
 
