@@ -8,6 +8,12 @@ namespace Spitfire.Data
     {
         public IDbSet<User> Users { get; set; }
 
+        public IDbSet<Customer> Customers { get; set; }
+        public IDbSet<Country> Countries { get; set; }
+
+        public IDbSet<City> Cities { get; set; }
+
+
         public SpitfireDbContext()
             : base("SpitfireDbContext")
         {
