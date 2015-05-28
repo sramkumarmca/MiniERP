@@ -15,7 +15,7 @@
         <tbody>
             <tr ng-repeat="user in vm.users">
                 <td>
-                    <a ng-click="vm.view(user)">{{ user.username }}</a>
+                    <a ng-click="vm.openEditDialog(user)">{{ user.name }}</a>
                 </td>
                 <td>{{ user.age }}</td>
             </tr>

@@ -10,25 +10,33 @@
     function MainCustomersController($modal, $translate, notification, User) {
         var vm = this;
 
-        vm.view = view;
+        vm.openEditDialog = openEditDialog;
         vm.openNewDialog = openNewDialog;
 
         loadData();
-        
+
         function loadData() {
             User.query(function (users) {
                 vm.users = users;
             });
         }
 
-        function view(user) {
-            window.alert('Going to the view \'' + user.id + '\' page ...');
+        function openEditDialog(user) {
+            var modalInstance = $modal.open({
+                templateUrl: 'app/main/customers/customer-dialog.html',
+                controller: 'MainCustomersEditCustomerDialogController as dialogVm',
+                resolve: {
+                    user: function () {
+                        return user;
+                    }
+                }
+            });
         }
 
         function openNewDialog() {
             var modalInstance = $modal.open({
                 templateUrl: 'app/main/customers/customer-dialog.html',
-                controller: 'MainCustomersDialogInstanceController as dialogVm'
+                controller: 'MainCustomersNewCustomerDialogController as dialogVm'
             });
 
             modalInstance.result.then(function (newCustomer) {

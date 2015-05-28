@@ -3,11 +3,11 @@
 
     angular
         .module('spitfire')
-        .controller('MainCustomersDialogInstanceController', MainCustomersDialogInstanceController);
+        .controller('MainCustomersNewCustomerDialogController', MainCustomersNewCustomerDialogController);
 
-    MainCustomersDialogInstanceController.$inject = ['$modalInstance', '$q', 'User'];
+    MainCustomersNewCustomerDialogController.$inject = ['$modalInstance', '$q', 'User'];
 
-    function MainCustomersDialogInstanceController($modalInstance, $q, User) {
+    function MainCustomersNewCustomerDialogController($modalInstance, $q, User) {
         var vm = this;
         vm.save = save;
         vm.cancel = cancel;
