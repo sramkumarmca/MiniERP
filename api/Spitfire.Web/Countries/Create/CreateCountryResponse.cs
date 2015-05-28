@@ -1,5 +1,7 @@
 ﻿namespace Spitfire.Web.Countries.Create
 {
+    using Domain;
+
     public class CreateCountryResponse
     {
         public CreateCountryResponse(Country country)
