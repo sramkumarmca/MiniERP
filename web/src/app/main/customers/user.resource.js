@@ -8,6 +8,10 @@
     function User($resource) {
         return $resource('http://localhost:1996/api/users/:userName', {
             userName: '@id'
+        }, {
+            'update': {
+                method: 'PUT'
+            }
         });
     }
 })();

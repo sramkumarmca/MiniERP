@@ -20,7 +20,7 @@
             {
                 var context = scope.Get<SpitfireDbContext>();
 
-                var user = context.Users.FirstOrDefault(x => x.Id == request.Id);
+                var user = context.Users.FirstOrDefault(x => x.Username == request.OriginalName);
 
                 user.Username = request.Name;
 
