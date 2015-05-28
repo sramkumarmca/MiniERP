@@ -5,7 +5,7 @@
 
     public class UpdateUserRequest : IRequest<UpdateUserResponse>
     {
-        public int Id { get; set; }
+        public string OriginalName { get; set; }
 
         [Required]
         public string Name { get; set; }

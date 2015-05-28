@@ -46,11 +46,11 @@
             return Ok(_mediator.Send(request));
         }
 
-        [VersionedRoute("{id:int:min(1)}")]
+        [VersionedRoute("{name}")]
         //[AuthorizeRoles(Roles.Manager, Roles.Administrator)]
-        public IHttpActionResult Put(int id, [FromBody] UpdateUserRequest request)
+        public IHttpActionResult Put(string name, [FromBody] UpdateUserRequest request)
         {
-            request.Id = id;
+            request.OriginalName = name;
             return Ok(_mediator.Send(request));
         }
     }
