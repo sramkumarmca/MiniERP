@@ -10,6 +10,8 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        <link rel="stylesheet" href="vendor/angular-google-places-autocomplete/autocomplete.css" />
+
         <!-- build:css(.) vendor/css/vendor.css -->
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/bootstrap.css" />
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/font-awesome.css" />
@@ -142,6 +144,9 @@
         <script src="node_modules/gnap-theme-gnap-angular/js/develop/gnap/validation-messages.directive.js"></script>
         <script src="node_modules/gnap-theme-gnap-angular/js/develop/gnap/validation-message.directive.js"></script>
         <!-- endbuild -->
+
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=nl"></script>
+        <script src="vendor/angular-google-places-autocomplete/autocomplete.js"></script>
 
         <!-- build:js(.) vendor/js/highlight.js -->
         <!--[if !(IE)|(gte IE 9)]><!-->

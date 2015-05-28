@@ -2,8 +2,9 @@
 
 (function () {
     angular
-        .module('spitfire', 
+        .module('spitfire',
                 ['gnap',
                  'ngSanitize',
-                 'ngResource']);
+                 'ngResource',
+                 'google.places']);
 })();

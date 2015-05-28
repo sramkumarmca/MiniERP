@@ -25,6 +25,11 @@
                         <div gnap-validation-message when="pattern">{{ 'main.customers.customerDialog.ageNumeric' | translate }}</div>
                     </div>
                 </div>
+
+                <div gnap-show-validity for="location" class="form-group">
+                    <label class="control-label" for="age">{{ 'main.customers.customerDialog.location' | translate }}</label>
+                    <input g-places-autocomplete data-ng-model="dialogVm.customer.location" class="form-control" id="location" name="location"/>
+                </div>
             </div>
         </div>
     </div>

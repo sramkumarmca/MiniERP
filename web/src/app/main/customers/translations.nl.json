@@ -10,6 +10,7 @@
             "title": "Klant gegevens",
             "username": "Gebruikersnaam",
             "age": "Leeftijd",
+            "location": "Locatie",
             "usernameRequired": "Gebruikersnaam is verplicht.",
             "usernameNotUnique": "Gebruikersnaam bestaat reeds.",
             "ageRequired": "Leeftijd is verplicht.",
