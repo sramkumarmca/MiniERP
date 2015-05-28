@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Spitfire.Domain
+﻿namespace Spitfire.Domain
 {
     public class Address
     {
-        public int Address_ID { get; set; }
+        public int Id { get; set; }
         public string StreetNumber { get; set; }
         public string Route { get; set; }
         public string Locality { get; set; }
