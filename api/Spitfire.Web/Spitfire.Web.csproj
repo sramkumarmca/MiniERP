@@ -20,7 +20,6 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,6 +174,10 @@
     <Compile Include="Bootstrap\StructureMap\Registries\DbScopeRegistry.cs" />
     <Compile Include="Bootstrap\StructureMap\Registries\MediatRRegistry.cs" />
     <Compile Include="Bootstrap\WebApi.cs" />
+    <Compile Include="Countries\CountriesController.cs" />
+    <Compile Include="Countries\Create\CreateCountryHandler.cs" />
+    <Compile Include="Countries\Create\CreateCountryRequest.cs" />
+    <Compile Include="Countries\Create\CreateCountryResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bootstrap\Startup.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -198,6 +201,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Countries\Delete\" />
+    <Folder Include="Countries\List\" />
+    <Folder Include="Countries\Update\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Spitfire.Data\Spitfire.Data.csproj">
@@ -617,11 +623,5 @@
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch')" />
   </Choose>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
+  
 </Project>

@@ -28,10 +28,15 @@
             return Ok(_mediator.Send(request ?? new ListUsersRequest()));
         }
 
-        [VersionedRoute("{id:int:min(1)}")]
+        [VersionedRoute("{name}")]
         public IHttpActionResult Get([FromUri] ViewUserRequest request)
         {
-            return Ok(_mediator.Send(request ?? new ViewUserRequest()));
+            var user = _mediator.Send(request ?? new ViewUserRequest());
+
+            if (user == null)
+                return NotFound();
+
+            return Ok(user);
         }
 
         [VersionedRoute]
