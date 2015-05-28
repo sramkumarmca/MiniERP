@@ -7,6 +7,13 @@ namespace Spitfire.Data
     public class SpitfireDbContext : DbContext
     {
         public IDbSet<User> Users { get; set; }
+        public IDbSet<Address> Addresses { get; set; }
+
+        public IDbSet<Customer> Customers { get; set; }
+        public IDbSet<Country> Countries { get; set; }
+
+        public IDbSet<City> Cities { get; set; }
+
 
         public SpitfireDbContext()
             : base("SpitfireDbContext")
