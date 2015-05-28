@@ -24,7 +24,7 @@ namespace Spitfire.Web.Addresses.Create
             {
                 var context = scope.Get<SpitfireDbContext>();
 
-                var address = context.Addresses.Add(new Address());
+                var address = context.Addresses.Add(new Address(request.Route, request.StreetNumber,request.PostalCode,request.Locality,request.AdministrativeArea, request.Country));
 
                 scope.SaveChanges();
 
