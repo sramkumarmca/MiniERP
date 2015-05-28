@@ -119,6 +119,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=4.0.20511.1437, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.4.0.2.205111437\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
@@ -143,6 +144,10 @@
     </Reference>
     <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebApiProblem, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiProblem.0.7.0.0\lib\net45\WebApiProblem.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -174,6 +179,7 @@
     <Compile Include="Bootstrap\StructureMap\Registries\DbScopeRegistry.cs" />
     <Compile Include="Bootstrap\StructureMap\Registries\MediatRRegistry.cs" />
     <Compile Include="Bootstrap\WebApi.cs" />
+    <Compile Include="Bootstrap\WebApiProblemFilterAttribute.cs" />
     <Compile Include="Countries\CountriesController.cs" />
     <Compile Include="Countries\Create\CreateCountryHandler.cs" />
     <Compile Include="Countries\Create\CreateCountryRequest.cs" />
@@ -195,6 +201,9 @@
     <Compile Include="Users\Update\UpdateUserRequest.cs" />
     <Compile Include="Users\Update\UpdateUserResponse.cs" />
     <Compile Include="Users\UsersController.cs" />
+    <Compile Include="Users\Verify\ViewUserHandler.cs" />
+    <Compile Include="Users\Verify\VerifyUserRequest.cs" />
+    <Compile Include="Users\Verify\VerifyUserResponse.cs" />
     <Compile Include="Users\View\ViewUserHandler.cs" />
     <Compile Include="Users\View\ViewUserRequest.cs" />
     <Compile Include="Users\View\ViewUserResponse.cs" />
@@ -623,5 +632,4 @@
   <Choose>
     <When Condition="($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch')" />
   </Choose>
-  
 </Project>

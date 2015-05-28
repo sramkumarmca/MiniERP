@@ -19,6 +19,7 @@
             using (var scope = _dbScopeFactory.CreateReadOnly())
             {
                 var context = scope.Get<SpitfireDbContext>();
+
                 var users = context.Users.ToList().Select(user => new ListUsersResponseItem(user));
 
                 return new ListUsersResponse(users);

@@ -14,6 +14,9 @@
                 .HasColumnAnnotation(
                     "Index",
                     new IndexAnnotation(new IndexAttribute("IX_UserName") { IsUnique = true }));
+
+            Property(p => p.Timestamp)
+                .IsRowVersion();
         }
     }
 }

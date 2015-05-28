@@ -8,6 +8,7 @@
     using Owin;
     using StructureMap;
     using StructureMap.Infrastructure;
+    using WebApiProblem;
 
     internal static class WebApi
     {
@@ -21,6 +22,9 @@
             config.Services.Replace(typeof(IHttpControllerActivator), new ServiceActivator(new DefaultContainer()));
 
             config.Formatters.Remove(config.Formatters.XmlFormatter);
+
+            config.Filters.Add(new ResponseExceptionFilterAttribute());
+            config.Filters.Add(new WebApiProblemFilterAttribute());
 
             // Configure JSON.NET to properly camelCase replies and to not fail on reference loops
             var jsonSettings = config.Formatters.JsonFormatter.SerializerSettings;

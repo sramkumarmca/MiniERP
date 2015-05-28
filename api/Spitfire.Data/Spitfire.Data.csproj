@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201505281032022_AddressStuff.Designer.cs">
       <DependentUpon>201505281032022_AddressStuff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505281207112_AddOptimisticLockingUser.cs" />
+    <Compile Include="Migrations\201505281207112_AddOptimisticLockingUser.Designer.cs">
+      <DependentUpon>201505281207112_AddOptimisticLockingUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpitfireDbContext.cs" />
@@ -81,6 +85,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505281032022_AddressStuff.resx">
       <DependentUpon>201505281032022_AddressStuff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505281207112_AddOptimisticLockingUser.resx">
+      <DependentUpon>201505281207112_AddOptimisticLockingUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,6 +6,7 @@
         "customerCreatedTitle": "Klant aangemaakt",
         "customerCreatedText": "De klant werd aangemaakt",
         "customerDialog": {
+            "errors.concurrency": "Deze gebruiker is door iemand anders gewijzigd.",
             "title": "Klant gegevens",
             "username": "Gebruikersnaam",
             "age": "Leeftijd",

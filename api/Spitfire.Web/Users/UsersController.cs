@@ -7,6 +7,7 @@
     using List;
     using MediatR;
     using Update;
+    using Verify;
     using View;
 
     [RoutePrefix("users")]
@@ -28,7 +29,7 @@
             return Ok(_mediator.Send(request ?? new ListUsersRequest()));
         }
 
-        [VersionedRoute("{name}")]
+        [VersionedRoute("{id:int:min(1)}")]
         public IHttpActionResult Get([FromUri] ViewUserRequest request)
         {
             var user = _mediator.Send(request ?? new ViewUserRequest());
@@ -39,18 +40,27 @@
             return Ok(user);
         }
 
+        [VersionedRoute("verify/{name}")]
+        public IHttpActionResult GetVerify([FromUri] VerifyUserRequest request)
+        {
+            var verify = _mediator.Send(request ?? new VerifyUserRequest());
+
+            if (verify == null)
+                return NotFound();
+
+            return Ok(verify);
+        }
+
         [VersionedRoute]
-        //[AuthorizeRoles(Roles.Manager, Roles.Administrator)]
         public IHttpActionResult Post([FromBody] CreateUserRequest request)
         {
             return Ok(_mediator.Send(request));
         }
 
-        [VersionedRoute("{name}")]
-        //[AuthorizeRoles(Roles.Manager, Roles.Administrator)]
-        public IHttpActionResult Put(string name, [FromBody] UpdateUserRequest request)
+        [VersionedRoute("{id:int:min(1)}")]
+        public IHttpActionResult Put(int id, [FromBody] UpdateUserRequest request)
         {
-            request.OriginalName = name;
+            request.Id = id;
             return Ok(_mediator.Send(request));
         }
     }

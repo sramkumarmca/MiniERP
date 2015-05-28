@@ -1,5 +1,6 @@
 ﻿namespace Spitfire.Web.Users.Update
 {
+    using System.Data.Entity.Infrastructure;
     using System.Linq;
     using Data;
     using GNaP.Data.Scope.EntityFramework.Interfaces;
@@ -20,7 +21,10 @@
             {
                 var context = scope.Get<SpitfireDbContext>();
 
-                var user = context.Users.FirstOrDefault(x => x.Username == request.OriginalName);
+                var user = context.Users.FirstOrDefault(x => x.Id == request.Id);
+
+                if (!user.Timestamp.SequenceEqual(request.Timestamp))
+                    throw new DbUpdateConcurrencyException("User has been updated in the mean time.");
 
                 user.Username = request.Name;
 

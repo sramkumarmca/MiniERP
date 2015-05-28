@@ -5,9 +5,9 @@
         .module('spitfire')
         .controller('MainCustomersNewCustomerDialogController', MainCustomersNewCustomerDialogController);
 
-    MainCustomersNewCustomerDialogController.$inject = ['$modalInstance', '$q', 'User'];
+    MainCustomersNewCustomerDialogController.$inject = ['$modalInstance', '$q', 'User', 'UserVerify'];
 
-    function MainCustomersNewCustomerDialogController($modalInstance, $q, User) {
+    function MainCustomersNewCustomerDialogController($modalInstance, $q, User, UserVerify) {
         var vm = this;
         vm.save = save;
         vm.cancel = cancel;
@@ -43,7 +43,7 @@
             }
 
             var uniqueDeferred = $q.defer();
-            User.get({
+            UserVerify.get({
                 userName: vm.customer.name
             }).$promise.then(function (user) {
                 uniqueDeferred.resolve(false);

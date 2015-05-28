@@ -5,9 +5,9 @@
         .module('spitfire')
         .controller('MainCustomersEditCustomerDialogController', MainCustomersEditCustomerDialogController);
 
-    MainCustomersEditCustomerDialogController.$inject = ['$modalInstance', '$q', 'User', 'user'];
+    MainCustomersEditCustomerDialogController.$inject = ['$modalInstance', '$q', '$translate', 'User', 'UserVerify', 'user'];
 
-    function MainCustomersEditCustomerDialogController($modalInstance, $q, User, user) {
+    function MainCustomersEditCustomerDialogController($modalInstance, $q, $translate, User, UserVerify, user) {
         var vm = this;
         var originalName = user.name;
 
@@ -21,14 +21,18 @@
             vm.showError = false;
 
             if (vm.customerForm.$valid) {
-                User.update({ userName: originalName }, vm.customer)
+                User.update({ id: vm.customer.id }, vm.customer)
                     .$promise
                     .then(function (savedCustomer) {
                         $modalInstance.close(savedCustomer);
                     })
                     .catch(function (error) {
                         vm.showError = true;
-                        vm.errorMessage = error.data.title;
+                        
+                        $translate(['main.customers.customerDialog.' + error.data.title])
+                            .then(function (translations) {
+                                vm.errorMessage = translations['main.customers.customerDialog.' + error.data.title];
+                            });
                     });
             }
         }
@@ -52,7 +56,7 @@
             }
 
             var uniqueDeferred = $q.defer();
-            User.get({
+            UserVerify.get({
                 userName: vm.customer.name
             }).$promise.then(function (user) {
                 uniqueDeferred.resolve(false);

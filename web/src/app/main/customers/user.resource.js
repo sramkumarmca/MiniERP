@@ -6,8 +6,8 @@
     User.$inject = ['$resource'];
 
     function User($resource) {
-        return $resource('http://localhost:1996/api/users/:userName', {
-            userName: '@id'
+        return $resource('http://localhost:1996/api/users/:id', {
+            id: '@id'
         }, {
             'update': {
                 method: 'PUT'

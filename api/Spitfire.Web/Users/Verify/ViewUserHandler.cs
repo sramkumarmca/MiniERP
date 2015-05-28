@@ -1,20 +1,20 @@
-﻿namespace Spitfire.Web.Users.View
+﻿namespace Spitfire.Web.Users.Verify
 {
     using System.Linq;
     using Data;
     using GNaP.Data.Scope.EntityFramework.Interfaces;
     using MediatR;
 
-    public class ViewUserHandler : IRequestHandler<ViewUserRequest, ViewUserResponse>
+    public class VerifyUserHandler : IRequestHandler<VerifyUserRequest, VerifyUserResponse>
     {
         private readonly IDbScopeFactory _dbScopeFactory;
 
-        public ViewUserHandler(IDbScopeFactory dbScopeFactory)
+        public VerifyUserHandler(IDbScopeFactory dbScopeFactory)
         {
             _dbScopeFactory = dbScopeFactory;
         }
 
-        public ViewUserResponse Handle(ViewUserRequest request)
+        public VerifyUserResponse Handle(VerifyUserRequest request)
         {
             using (var scope = _dbScopeFactory.CreateReadOnly())
             {
@@ -23,7 +23,7 @@
                 var user = context.Users.SingleOrDefault(x => x.Username == request.Name);
 
                 return user != null
-                    ? new ViewUserResponse(user)
+                    ? new VerifyUserResponse()
                     : null;
             }
         }

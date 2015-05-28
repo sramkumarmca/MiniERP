@@ -7,10 +7,10 @@
         public CreateUserResponse(User user)
         {
             Id = user.Id;
-            DisplayName = user.Username;
+            Name = user.Username;
         }
 
-        public string DisplayName { get; set; }
+        public string Name { get; set; }
 
         public int Id { get; set; }
     }
