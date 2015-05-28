@@ -19,9 +19,11 @@
             using (var scope = _dbScopeFactory.CreateReadOnly())
             {
                 var context = scope.Get<SpitfireDbContext>();
-                var user = context.Users.SingleOrDefault(x => x.Id == request.Id);
+                var user = context.Users.SingleOrDefault(x => x.Username == request.Name);
 
-                return new ViewUserResponse(user);
+                return user != null
+                    ? new ViewUserResponse(user)
+                    : null;
             }
         }
     }

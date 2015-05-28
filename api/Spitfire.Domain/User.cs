@@ -6,9 +6,10 @@
         {
         }
 
-        public User(string username)
+        public User(string username, int age)
         {
             Username = username;
+            Age = age;
         }
 
         public int Id { get; set; }
