@@ -2,6 +2,15 @@
 {
     public class Address
     {
+        public Address(string street,string streetnr, string locality, string administrativeArea, string country, string postalcode)
+        {
+            StreetNumber = streetnr;
+            Route = street;
+            Locality = locality;
+            AdministrativeArea = administrativeArea;
+            Country = country;
+            PostalCode = postalcode;
+        }
         public int Id { get; set; }
         public string StreetNumber { get; set; }
         public string Route { get; set; }

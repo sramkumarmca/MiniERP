@@ -10,8 +10,7 @@ namespace Spitfire.Web.Addresses
     using MediatR;
     using Spitfire.Web.Addresses.Create;
 
-
-    [RoutePrefix("address")]
+    [RoutePrefix("addresses")]
     public class AddressController : ApiController
     {
         private readonly IMediator _mediator;
@@ -30,9 +29,5 @@ namespace Spitfire.Web.Addresses
         {
             return Ok(_mediator.Send(request));
         }
-
     }
-
-
-
 }
