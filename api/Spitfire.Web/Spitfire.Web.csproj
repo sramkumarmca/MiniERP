@@ -157,10 +157,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web.Debug.config">
+    <Content Include="Web.Sandbox.config">
       <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <Content Include="Web.Release.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Production.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
