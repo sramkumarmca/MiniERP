@@ -170,6 +170,8 @@ module.exports = function(grunt) {
                         dest: 'dist',
                         src: [
                             './index.html',
+                            './web.config',
+                            './favicon.ico',
                             './**/*.html',
                             './**/*.json',
                             './images/*.*',
