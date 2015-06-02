@@ -10,8 +10,6 @@
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="vendor/angular-google-places-autocomplete/autocomplete.css" />
-
         <!-- build:css(.) vendor/css/vendor.css -->
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/bootstrap.css" />
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/font-awesome.css" />
@@ -56,6 +54,9 @@
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/ie9.css" />
         <link rel="stylesheet" href="node_modules/gnap-theme-gnap-angular/css/develop/custom.css" />
         <!-- endbuild -->
+        <!-- build:css vendor/css/vendor-app.css -->
+        <link rel="stylesheet" href="vendor/angular-google-places-autocomplete/autocomplete.css" />
+        <!-- endbuild -->
         <!-- build:js(.) vendor/js/modernizr.js -->
         <script src="node_modules/gnap-theme-gnap-angular/js/develop/modernizr.js"></script>
         <!-- endbuild -->
@@ -63,11 +64,13 @@
         <link rel="stylesheet" href="css/app.css" />
         <!-- endbuild -->
 
-        <link href="node_modules/gnap-theme-gnap-angular/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
     </head>
 
     <body>
         <div ui-view>Loading...</div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=nl"></script>
 
         <!-- build:js(.) vendor/js/vendor.js -->
         <script src="node_modules/gnap-theme-gnap-angular/js/develop/jquery.js"></script>
@@ -145,14 +148,15 @@
         <script src="node_modules/gnap-theme-gnap-angular/js/develop/gnap/validation-message.directive.js"></script>
         <!-- endbuild -->
 
-        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&language=nl"></script>
-        <script src="vendor/angular-google-places-autocomplete/autocomplete.js"></script>
-
         <!-- build:js(.) vendor/js/highlight.js -->
         <!--[if !(IE)|(gte IE 9)]><!-->
             <script src="node_modules/gnap-theme-gnap-angular/js/develop/highlight/highlight.pack.js"></script>
             <script src="node_modules/gnap-theme-gnap-angular/js/develop/gnap/highlight.directive.js"></script>
         <!--<![endif]-->
+        <!-- endbuild -->
+
+        <!-- build:js vendor/js/vendor-app.js -->
+        <script src="vendor/angular-google-places-autocomplete/autocomplete.js"></script>
         <!-- endbuild -->
 
         <!-- build:js app/js/app.js -->
