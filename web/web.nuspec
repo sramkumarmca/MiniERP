@@ -5,7 +5,7 @@
         <version>0.0</version>
         <authors>firmwarecs</authors>
         <owners>firmwarecs</owners>
-        <description>Mini ERP</description>
+        <description>Spitfire.Web.Frontend</description>
     </metadata>
     <files>
         <file src="dist\**\*.*" target=""/>
