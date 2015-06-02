@@ -6,7 +6,7 @@
     UserVerify.$inject = ['$resource'];
 
     function UserVerify($resource) {
-        return $resource('http://localhost:1996/api/users/verify/:userName', {
+        return $resource('http://firmwarecs.azurewebsites.net/api/users/verify/:userName', {
             userName: '@id'
         });
     }

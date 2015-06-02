@@ -7,6 +7,9 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
+        teamcity: {
+            all: {} // need a task even if its an empty one
+        },
         watch: {
             js: {
                 files: ['./src/app/**/*.js'],
@@ -337,6 +340,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('dist', [
+        'teamcity',
         'clean:dist',
         'useminPrepare',
         'copy:css',
