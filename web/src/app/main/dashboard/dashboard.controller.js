@@ -5,8 +5,13 @@
         .module('spitfire')
         .controller('MainDashboardController', MainDashboardController);
 
-    MainDashboardController.$inject = [];
+    MainDashboardController.$inject = ['permissionsService'];
 
-    function MainDashboardController() {
+    function MainDashboardController(permissionsService) {
+        permissionsService.getItems().success(function (results) {
+            console.log(results);
+        }).error(function (err) {
+            console.log(err);
+        });
     }
 })();

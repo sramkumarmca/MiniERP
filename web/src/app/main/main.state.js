@@ -10,7 +10,8 @@
         state: {
             abstract: true,
             templateUrl: 'app/main/main.html',
-            controller: 'MainController as main'
+            controller: 'MainController as main',
+            requireADLogin: true
         },
         breadcrumb: {
             titleTranslationId: 'main.breadcrumb',

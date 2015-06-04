@@ -6,5 +6,6 @@
                 ['gnap',
                  'ngSanitize',
                  'ngResource',
+                 'AdalAngular',
                  'google.places']);
 })();
