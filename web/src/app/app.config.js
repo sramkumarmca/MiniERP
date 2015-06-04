@@ -40,6 +40,7 @@
             instance: 'https://login.microsoftonline.com/',
             tenant: 'FirmwareLabs.onmicrosoft.com',
             clientId: '745432f8-3e0c-448b-a056-036173e56c9c',
+            requireADLogin: true,
             endpoints: {
                 'https://minierpapi.azurewebsites.net/api/': 'https://FirmwareLabs.onmicrosoft.com/minierpapi',
             }

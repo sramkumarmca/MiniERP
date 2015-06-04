@@ -9,7 +9,7 @@
 
     function MainDashboardController(permissionsService) {
         permissionsService.getItems().success(function (results) {
-            console.log('Permissions: ' + results);
+            console.log('Permissions: ' + JSON.stringify(results));
         }).error(function (err) {
             console.log('Error: ' + err);
         });

@@ -6,7 +6,7 @@
     User.$inject = ['$resource'];
 
     function User($resource) {
-        return $resource('https://firmwarecs.azurewebsites.net/api/users/:id', {
+        return $resource('https://minierpapi.azurewebsites.net/api/users/:id', {
             id: '@id'
         }, {
             'update': {
