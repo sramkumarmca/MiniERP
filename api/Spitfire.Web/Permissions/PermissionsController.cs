@@ -5,7 +5,6 @@
     using GNaP.WebApi.Versioning;
     using MediatR;
 
-    [Authorize]
     [RoutePrefix("permissions")]
     public class PermissionsController : ApiController
     {

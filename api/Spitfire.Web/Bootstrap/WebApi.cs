@@ -25,6 +25,7 @@
 
             config.Filters.Add(new ResponseExceptionFilterAttribute());
             config.Filters.Add(new WebApiProblemFilterAttribute());
+            config.Filters.Add(new AuthorizeAttribute());
 
             // Configure JSON.NET to properly camelCase replies and to not fail on reference loops
             var jsonSettings = config.Formatters.JsonFormatter.SerializerSettings;

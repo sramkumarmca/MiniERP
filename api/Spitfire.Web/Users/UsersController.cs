@@ -10,7 +10,6 @@
     using Verify;
     using View;
 
-    [Authorize]
     [RoutePrefix("users")]
     public class UsersController : ApiController
     {
