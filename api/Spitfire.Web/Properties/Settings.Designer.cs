@@ -25,16 +25,7 @@ namespace Spitfire.Web.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("urn:example")]
-        public string Issuer {
-            get {
-                return ((string)(this["Issuer"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("urn:example")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string Audience {
             get {
                 return ((string)(this["Audience"]));
@@ -43,10 +34,10 @@ namespace Spitfire.Web.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("U0lHTklOR19LRVlfR09FU19IRVJF")]
-        public string TokenSigningKey {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Tenant {
             get {
-                return ((string)(this["TokenSigningKey"]));
+                return ((string)(this["Tenant"]));
             }
         }
     }
