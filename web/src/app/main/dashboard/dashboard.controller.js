@@ -9,9 +9,9 @@
 
     function MainDashboardController(permissionsService) {
         permissionsService.getItems().success(function (results) {
-            console.log(results);
+            console.log('Permissions: ' + results);
         }).error(function (err) {
-            console.log(err);
+            console.log('Error: ' + err);
         });
     }
 })();

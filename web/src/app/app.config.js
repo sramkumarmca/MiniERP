@@ -37,16 +37,14 @@
         //$httpProvider.interceptors.push('authenticationInterceptor');
 
         adalAuthenticationServiceProvider.init({
-                tenant: 'd03a71e5-be37-42b3-b742-77b737634db8',
-                clientId: 'e8643d3c-d1f5-4292-b3f2-db4eb7ec9f42',
-                instance: 'https://login.microsoftonline.com/',
-                //redirectUri : 'https://firmwarecsfrontend.azurewebsites.net/', // optional
-                endpoints: {
-                    'https://minierpsandboxapi.azurewebsites.net/api/': '5067f263-2017-4df4-97a1-c366304d3c9f',
-                }
-            },
-            $httpProvider
-        );
+            instance: 'https://login.microsoftonline.com/',
+            tenant: 'FirmwareLabs.onmicrosoft.com',
+            clientId: '745432f8-3e0c-448b-a056-036173e56c9c',
+            endpoints: {
+                'https://minierpapi.azurewebsites.net/api/': 'https://FirmwareLabs.onmicrosoft.com/minierpapi',
+            }
+        },
+        $httpProvider);
     }
 
     // handleStateChangeError.$inject = ['$rootScope', '$state', '$location', 'sessionService', 'unhandledErrorChannel'];

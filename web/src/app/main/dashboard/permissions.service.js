@@ -9,7 +9,7 @@
         var _getItems = function () {
             $http.defaults.useXDomain = true;
             delete $http.defaults.headers.common['X-Requested-With'];
-            return $http.get('https://minierpsandboxapi.azurewebsites.net/api/permissions');
+            return $http.get('https://minierpapi.azurewebsites.net/api/permissions');
         };
 
         return {
