@@ -10,7 +10,8 @@
         state: {
             url: '/dashboard',
             templateUrl: 'app/main/dashboard/dashboard.html',
-            controller: 'MainDashboardController as vm'
+            controller: 'MainDashboardController as vm',
+            requireADLogin: true
         },
         title: {
             textTranslationId: 'main.dashboard.title'
