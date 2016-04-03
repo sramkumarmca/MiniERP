@@ -5,7 +5,7 @@
         .module('spitfire')
         .config(urlRouterConfiguration)
         .config(titleConfiguration)
-        .config(authConfiguration);
+       // .config(authConfiguration);
         //.run(handleStateChangeError);
 
     var defaultPage = '/dashboard';
@@ -31,7 +31,7 @@
         $urlRouterProvider.otherwise('/notfound');
     }
 
-    authConfiguration.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider'];
+    //authConfiguration.$inject = ['$httpProvider', 'adalAuthenticationServiceProvider'];
 
     function authConfiguration($httpProvider, adalAuthenticationServiceProvider) {
         //$httpProvider.interceptors.push('authenticationInterceptor');
